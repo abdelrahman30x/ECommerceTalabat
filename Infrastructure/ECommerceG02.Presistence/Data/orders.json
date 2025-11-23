@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "d2b4e3a5-91e2-4c8f-9a77-8c1dd89f1001",
+    "UserEmail": "omar.OmarMahmoud4@example.com",
+    "OrderDate": "2024-11-15T12:30:00Z",
+    "OrderStatus": 0,
+    "Subtotal": 250.00,
+    "DeliveryMethodId": 1,
+    "shipToAddress": {
+      "firstName": "Abdelrahman",
+      "lastName": "Mostafa",
+      "street": "Street 12",
+      "city": "Cairo",
+      "zipCode": "12345",
+      "country": "Egypt"
+    }
+  },
+  {
+    "Id": "f9d3b7c1-23af-44d8-a19f-118ab3b81002",
+    "UserEmail": "omar.dev3@example.com",
+    "OrderDate": "2024-11-15T13:00:00Z",
+    "OrderStatus": 1,
+    "Subtotal": 470.00,
+    "DeliveryMethodId": 2,
+    "shipToAddress": {
+      "firstName": "Ahmed",
+      "lastName": "Ali",
+      "street": "Street 10",
+      "city": "Cairo",
+      "zipCode": "11111",
+      "country": "Egypt"
+    }
+  }
+]

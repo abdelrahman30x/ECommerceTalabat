@@ -1,0 +1,821 @@
+{
+	"info": {
+		"_postman_id": "fd2945c7-d1ed-46c3-a5c1-038f05147b73",
+		"name": "ECommerceG02 API",
+		"description": "Postman collection for Basket - Orders - Products",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20661897"
+	},
+	"item": [
+		{
+			"name": "Basket",
+			"item": [
+				{
+					"name": "Get Basket By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/Basket?key=sample_user_123",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"Basket"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "sample_user_123"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create or Update Basket",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": \"sample_user_123\",\n  \"items\": [\n    {\n      \"id\": 1,\n      \"Name\": \"iPhone 16 Pro\",\n      \"price\": 950,\n      \"quantity\": 2,\n      \"pictureUrl\": \"images/iphone16.png\",\n      \"brand\": \"Apple\",\n      \"type\": \"Phones\"\n    },\n    {\n      \"id\": 2,\n      \"productName\": \"Samsung TV 55\",\n      \"price\": 600,\n      \"quantity\": 1,\n      \"pictureUrl\": \"images/tv55.png\",\n      \"brand\": \"Samsung\",\n      \"type\": \"TV\"\n    }\n  ]\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/Basket",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"Basket"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Basket",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/Basket/sample_user_123",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"Basket",
+								"sample_user_123"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Orders",
+			"item": [
+				{
+					"name": "Get User Orders",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/Order",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"Order"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Order By Id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/Order/00000000-0000-0000-0000-000000000111",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"Order",
+								"00000000-0000-0000-0000-000000000111"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Order",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"basketId\": \"sample_user_123\",\n  \"deliveryMethodId\": 1,\n  \"address\": {\n    \"AddressLine1\": \"123 Elm Street\",\n    \"AddressLine2\": \"Apartment 4B\",\n    \"City\": \"Cairo\",\n    \"Country\": \"Egypt\",\n    \"PostalCode\": \"11511\",\n    \"PhoneNumber\": \"+201234567890\"\n  }\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/Order",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"Order"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Delivery Methods",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/Order/deliveryMethods",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"Order",
+								"deliveryMethods"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "Get All Products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/Product?pageIndex=1&pageSize=5&SortingOption=4",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"Product"
+							],
+							"query": [
+								{
+									"key": "pageIndex",
+									"value": "1"
+								},
+								{
+									"key": "pageSize",
+									"value": "5"
+								},
+								{
+									"key": "SortingOption",
+									"value": "4"
+								},
+								{
+									"key": "SearchValue",
+									"value": "Italian",
+									"disabled": true
+								},
+								{
+									"key": "BrandId",
+									"value": "5",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Brands",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/Product/Brands",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"Product",
+								"Brands"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Types",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/Product/Types",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"Product",
+								"Types"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Product By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/Product/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"Product",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Authentication",
+					"item": [
+						{
+							"name": "Register",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"Username\": \"OmarMahmoud\",\n  \"FirstName\": \"Omar\",\n  \"LastName\": \"Mahmoud\",\n  \"displayName\": \"OmarDev\",\n  \"email\": \"omar.dev@example.com\",\n  \"password\": \"P@ssw0rd!\",\n  \"confirmPassword\": \"P@ssw0rd!\",\n  \"dateOfBirth\": \"1998-07-15\",\n  \"profilePictureUrl\": \"https://example.com/images/profile.jpg\",\n  \"bio\": \"Full-stack developer who loves clean code.\",\n  \"alternativeEmail\": \"omar.alt@example.com\",\n  \"mobileNumber\": \"+201234567890\",\n  \"preferredLanguage\": \"en\",\n  \"timeZone\": \"Africa/Cairo\",\n  \"receiveNewsletter\": true,\n  \"receivePromotions\": false\n}\n"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/auth/register",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"auth",
+										"register"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Login",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"if (pm.response.code === 200) {",
+											"    var jsonData = pm.response.json();",
+											"    pm.collectionVariables.set(\"token\", jsonData.token);",
+											"}"
+										],
+										"type": "text/javascript",
+										"packages": {},
+										"requests": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"usernameOrEmail\": \"omar.dev@example.com\",\n  \"password\": \"P@ssw0rd!\",\n  \"rememberMe\": false\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/auth/login",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Current User",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/auth/me",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"auth",
+										"me"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Logout",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/auth/logout",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"auth",
+										"logout"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Password Management",
+					"item": [
+						{
+							"name": "Forgot Password",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\": \"test@example.com\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/auth/forgot-password",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"auth",
+										"forgot-password"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Reset Password",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"userId\": \"user-id-here\",\n  \"token\": \"reset-token-here\",\n  \"newPassword\": \"NewPassword@123\",\n  \"confirmPassword\": \"NewPassword@123\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/auth/reset-password",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"auth",
+										"reset-password"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Change Password",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"currentPassword\": \"Test@123456\",\n  \"newPassword\": \"NewPassword@123\",\n  \"confirmPassword\": \"NewPassword@123\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/auth/change-password",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"auth",
+										"change-password"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Profile Management",
+					"item": [
+						{
+							"name": "Update Profile",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"username\": \"newusername\",\n  \"email\": \"newemail@example.com\",\n  \"firstName\": \"John\",\n  \"lastName\": \"Doe\",\n  \"phoneNumber\": \"+1234567890\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/auth/profile",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"auth",
+										"profile"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Account",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"password\": \"Test@123456\",\n  \"confirmDeletion\": true\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/auth/account",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"auth",
+										"account"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Email Management",
+					"item": [
+						{
+							"name": "Confirm Email",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"userId\": \"user-id-here\",\n  \"token\": \"confirmation-token-here\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/auth/confirm-email",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"auth",
+										"confirm-email"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Validation",
+					"item": [
+						{
+							"name": "Check Email Availability",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/auth/check-email?email=test@example.com",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"auth",
+										"check-email"
+									],
+									"query": [
+										{
+											"key": "email",
+											"value": "test@example.com"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Check Username Availability",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/auth/check-username?username=testuser",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"auth",
+										"check-username"
+									],
+									"query": [
+										{
+											"key": "username",
+											"value": "testuser"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Validate Token",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"token\": \"{{token}}\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/auth/validate-token",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"auth",
+										"validate-token"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Address Management",
+					"item": [
+						{
+							"name": "Get Address User",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/auth/Address",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"auth",
+										"Address"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Address User",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"addressLine1\": \"123 Main Street\",\r\n  \"addressLine2\": \"Apt 4B\",\r\n  \"city\": \"Cairo\",\r\n  \"state\": \"Cairo Governorate\",\r\n  \"country\": \"Egypt\",\r\n  \"postalCode\": \"11511\",\r\n  \"phoneNumber\": \"+201234567890\",\r\n  \"isDefault\": true,\r\n  \"isActive\": true\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/auth/Address",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"auth",
+										"Address"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Admin Login Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"if (pm.response.code === 200) {",
+									"    var jsonData = pm.response.json();",
+									"    pm.collectionVariables.set(\"token\", jsonData.token);",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"usernameOrEmail\": \"superadmin@example.com\",\n  \"password\": \"Admin@123456\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/auth/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						},
+						"description": "Login with default admin credentials"
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://localhost:7243/api"
+		},
+		{
+			"key": "token",
+			"value": "FAKE_JWT_TOKEN_123456789"
+		}
+	]
+}
