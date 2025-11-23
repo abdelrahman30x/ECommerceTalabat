@@ -287,6 +287,8 @@ dotnet ef database update
 - Default admin credentials can be found in the database seed data
 
 ## 📸 Screenshots
+<img width="1884" height="857" alt="image" src="https://github.com/user-attachments/assets/7a2b6597-1f98-417d-bde7-c51be4b070bc" />
+<img width="1917" height="1022" alt="image" src="https://github.com/user-attachments/assets/d24b4a9f-d391-40f8-a586-1b3b6ac6a49b" />
 
 ---
 
