@@ -1,0 +1,12 @@
+[
+  {
+    "productId": 101,
+    "productName": "Nike Air Zoom",
+    "pictureUrl": "images/products/shoes1.png"
+  },
+  {
+    "productId": 102,
+    "productName": "Adidas Runner Pro",
+    "pictureUrl": "images/products/shoes2.png"
+  }
+]

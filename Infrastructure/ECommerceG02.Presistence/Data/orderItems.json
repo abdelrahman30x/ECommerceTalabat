@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "product": {
+      "productId": 101,
+      "productName": "Nike Air Zoom",
+      "pictureUrl": "images/products/shoes1.png"
+    },
+    "price": 1500.00,
+    "quantity": 2
+  },
+  {
+    "id": 2,
+    "product": {
+      "productId": 102,
+      "productName": "Adidas Runner Pro",
+      "pictureUrl": "images/products/shoes2.png"
+    },
+    "price": 1200.00,
+    "quantity": 1
+  }
+]
